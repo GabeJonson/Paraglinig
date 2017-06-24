@@ -1,0 +1,26 @@
+.btn {
+  @include max-size(200px null);
+  @include size(100% null);
+  padding: 20px 0;
+  font: {
+    size: rem(13);
+    weight: bold;
+  }
+  text-align: center;
+  color: $white;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  outline-offset: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &-dark {
+    background-color: $dark-blue;
+
+    &:hover {
+      color: $dark-blue;
+      background-color: $white;
+    }
+  }
+}

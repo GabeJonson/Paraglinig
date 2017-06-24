@@ -3,5 +3,15 @@
 // font
 @each $size in $heading-sizes {
 	$key: index($heading-sizes, $size);
-	h#{$key}, .h#{$key} { font-size: rem($size); }
+	h#{$key}, .h#{$key} {
+		font-size: rem($size);
+		text-shadow: 1.5px 1.5px 0 fade-out($black, 0.7);
+	}
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('#{$font-path}roboto-regular-webfont.woff2') format('woff2'),
+         url('#{$font-path}roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

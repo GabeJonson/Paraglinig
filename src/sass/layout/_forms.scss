@@ -1,0 +1,76 @@
+form {
+  @include size(calc(100% + 30px) null);
+  margin: {
+    top: 140px;
+    left: -15px;
+  }
+  padding: 50px 0;
+  background-color: fade-out($light-blue, 0.1);
+
+  h2 {
+    margin-bottom: 30px;
+    font-size: rem(50);
+    color: $white;
+  }
+
+  .form-group:not(.button-container) {
+    margin-bottom: 30px;
+
+    @include tablet { &:not(:nth-last-of-type(1)) { margin-right: 20px; } }
+  }
+
+  input {
+    @include max-size(350px 55px);
+    @include size(100vh);
+    padding: {
+      right: 30px;
+      left: 70px;
+    }
+    font-size: rem(20);
+    color: $white;
+    background: fade-out($input-bg, 0.8);
+    border: none;
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 3px fade-out($black, 0.8);
+
+    &::placeholder { color: darken($white, 30%); }
+
+    @include mobile {
+      @include size(100% null);
+      display: block;
+    }
+  }
+
+  label {
+    @include size(20px null);
+    text-align: center;
+    display: block;
+    position: absolute;
+    @include vertical-center;
+    left: 30px;
+
+    .fa {
+      font-size: rem(25);
+      color: $white;
+    }
+  }
+
+  .button-container {
+    &:before, &:after {
+      content: '';
+      @include size(10% 2px);
+      background-color: fade-out($white, 0.5);
+      position: absolute;
+      @include vertical-center;
+    }
+
+    &:before {
+      left: 50%;
+      transform: translateX(-200%);
+    }
+    &:after {
+      right: 50%;
+      transform: translateX(200%);
+    }
+  }
+}

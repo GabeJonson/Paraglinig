@@ -11,3 +11,8 @@ mixin list-link(href, text, linkClass)
 			a(href=href, class=linkClass)= text
 		else 
 			a(href=href)= text
+
+mixin parallax(image) 
+	section.container-fluid.parallax(style=`background-image: url(${imgPath}${image})`)&attributes(attributes)
+		if block
+			block

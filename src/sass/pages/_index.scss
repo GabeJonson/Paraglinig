@@ -1,0 +1,56 @@
+.paragliding {
+  padding-top: 80px;
+
+  &:after {
+    content: '';
+    background-color: fade-out($black, 0.8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  figure {
+    @include max-size(100px null);
+    margin: 0 auto;
+
+    &:before, &:after {
+      content: '';
+      @include size(100% 2px);
+      background-color: fade-out($white, 0.5);
+      position: absolute;
+      @include vertical-center;
+    }
+
+    &:before {
+      left: 50%;
+      transform: translateX(-200%);
+    }
+    &:after {
+      right: 50%;
+      transform: translateX(200%);
+    }
+  }
+
+  h1 {
+    font-size: rem(150);
+    color: $white
+  }
+
+  p {
+    margin-bottom: 20px;
+    font-size: rem(48);
+    color: $white;
+
+    &:after {
+      content: '';
+      @include size(100px 2px);
+      background-color: $white;
+      position: absolute;
+      @include horizontal-center;
+      bottom: -10px;
+    }
+  }
+}

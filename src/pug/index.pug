@@ -1,6 +1,31 @@
 extends layout/_main
 
 block title
-  | The title
+  | Paragliding
 
 block content
+  +parallax('bg-1.jpeg')(class='paragliding')
+    .container.relative.index-2
+      .row.center-xs
+        .top-container.col-xs-12
+          +figure('header-logo.png')(class='relative')
+          h1 Paragliding
+          p.relative Enjoy an andrenalized #[br] flying trips
+    form.column-xs.relative.index-2
+      .container
+          h2.text-center Join the club
+          .form-group-container.row.center-xs
+            .form-group.relative
+              label
+                i.fa.fa-user
+              input(type='text', placeholder='Full name')
+            .form-group.relative
+              label
+                i.fa.fa-envelope
+              input(type='text', placeholder='Email')
+            .form-group.relative
+              label
+                i.fa.fa-phone
+              input(type='text', placeholder='Phone')
+          .form-group.button-container.relative.text-center
+            button.btn.btn-dark.text-uppercase(type='submit') start now!
