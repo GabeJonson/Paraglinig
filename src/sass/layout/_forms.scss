@@ -56,21 +56,6 @@ form {
   }
 
   .button-container {
-    &:before, &:after {
-      content: '';
-      @include size(10% 2px);
-      background-color: fade-out($white, 0.5);
-      position: absolute;
-      @include vertical-center;
-    }
-
-    &:before {
-      left: 50%;
-      transform: translateX(-200%);
-    }
-    &:after {
-      right: 50%;
-      transform: translateX(200%);
-    }
+    @include two-lines(10%);
   }
 }

@@ -29,3 +29,25 @@ block content
               input(type='text', placeholder='Phone')
           .form-group.button-container.relative.text-center
             button.btn.btn-dark.text-uppercase(type='submit') start now!
+
+  +parallax('bg-2.jpeg')(class='welcome')
+    .container.relative.index-2
+      .row.center-xs
+        .top-container.col-xs-12.row.center-xs
+          +figure('page-logo.png')(class='relative')
+          h2.col-xs-12 Welcome
+        .text-container.row.col-xs-12
+          -for(var i = 0; i < 3; i++)
+            p.col-xs-12.col-sm-4 Praesent vestibulum aenean nonummy endrerit mauris. Cum sociis natoque Magnis dis parturient montes. Ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio.
+        -for(var i = 1; i <= 4; i++)
+          .text-container.relative.col-xs-12.col-sm-6.col-md-3
+            span.counter= `0${i}.`
+            h3 Extrime
+            p Praesent vestibulum aenean nonummy endrerit mauris. Cum sociis natoque Magnis dis parturient montes. Ascetur ridiculus mus.
+            a.btn.btn-white(href='/') read more #[i.fa.fa-angle-right]
+            
+        .latest-photos
+          h2.relative Latest photos
+          .owl-carousel
+            -for(var i = 1; i <= 6; i++)
+              .item(style=`background-image: url(${imgPath}image-${i}.jpg)`)

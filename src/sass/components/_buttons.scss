@@ -8,7 +8,7 @@
   }
   text-align: center;
   color: $white;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 30px;
   outline: none;
   outline-offset: 0;
@@ -21,6 +21,21 @@
     &:hover {
       color: $dark-blue;
       background-color: $white;
+    }
+  }
+
+  &-white {
+    @include max-size(100px null);
+    padding: 10px 0;
+    color: $links-color;
+    background-color: $white;
+    display: block;
+
+    .fa { color: $links-color; }
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $white;
     }
   }
 }

@@ -63,3 +63,22 @@
     clear: both;
   }
 }
+
+@mixin two-lines($size) {
+  &:before, &:after {
+    content: '';
+    @include size($size 2px);
+    background-color: fade-out($white, 0.5);
+    position: absolute;
+    @include vertical-center;
+  }
+
+  &:before {
+    left: 50%;
+    transform: translateX(-200%);
+  }
+  &:after {
+    right: 50%;
+    transform: translateX(200%);
+  }
+}
